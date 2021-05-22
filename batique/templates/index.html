@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Upload img</title>
+</head>
+<script>
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+<body>
+
+<div class="container">
+<div class="row">
+    <h2>Upload Image</h2>
+    <form method="post" action="/" enctype="multipart/form-data">
+            <input type="file" name="file" class="form-control" autocomplete="off" required>
+            <input type="submit" value="Submit" class="btn btn-info">
+    </form>
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('display_img', filename=filename) }}" style="max-width: 30%; max-height: 30%;">
+        </div>
+    {% endif %}
+</div>
+<div class="row">
+    <h2>Remove Background</h2>
+    <form method="post" action="/rembg" enctype="multipart/form-data">
+            <input type="file" name="file" class="form-control" autocomplete="off" required>
+            <input type="submit" value="Submit" class="btn btn-info">
+    </form>
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('display_img', filename=filename) }}" style="max-width: 30%; max-height: 30%;">
+        </div>
+    {% endif %}
+</div>
+<div class="row">
+    <h2>Potong Baju</h2>
+    <form method="post" action="/getcloth" enctype="multipart/form-data">
+            <input type="file" name="file" class="form-control" autocomplete="off" required>
+            <input type="submit" value="Submit" class="btn btn-info">
+    </form>
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('display_img', filename=filename) }}" style="max-width: 30%; max-height: 30%;">
+        </div>
+    {% endif %}
+</div>
+<div class="row">
+    <h2>Normal Map</h2>
+    <form method="post" action="/normalmap" enctype="multipart/form-data">
+            <input type="file" name="file" class="form-control" autocomplete="off" required>
+            <input type="submit" value="Submit" class="btn btn-info">
+    </form>
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('display_img', filename=filename) }}" style="max-width: 30%; max-height: 30%;">
+        </div>
+    {% endif %}
+</div>
+
+</div>
+</body>
+</html>
+<!-- <div class="row">
+    <h2>Upload Normal IMAGE</h2>
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <input type="file" name='image' class='btn'><br><br><br>
+        <input type="submit" class='btn'>
+    </form>
+</div> -->
