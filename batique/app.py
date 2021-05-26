@@ -1,4 +1,4 @@
-from flask import Flask, flash, request, redirect, url_for, render_template
+from flask import Flask, flash, request, redirect, url_for, render_template, send_file
 import urllib.request
 #from imageai.Detection import ObjectDetection
 import os
@@ -49,7 +49,6 @@ class fashion_tools(object):
     def get_patch(self):
         return None
 
-
 app = Flask(__name__)
  
 UPLOAD_FOLDER = 'static/uploads/'
@@ -60,7 +59,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 #ekstensi yang diterima 
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
  
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -79,96 +78,58 @@ def upload_img():
 
     file = request.files['file']
     if file and allowed_file(file.filename): #statement jika file berhasil di upload
-        filename = secure_filename(file.filename)
+        filename = secure_filename("imagefile"+file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         flash('Gambar berhasil di upload')
-        return render_template('index.html', filename=filename)
+        return redirect(os.path.join(app.config['UPLOAD_FOLDER'], filename), code=301)
 
     else: #statement else jika extensi file tidak sesuai dengan syarat
         flash('hanya bisa upload file png,jpg,jpeg,dan gif')
         return redirect(request.url)
  #################################################################
 #routing /rembg dengan menggunakan metode post dan get (removebg)
-@app.route('/rembg', methods=['POST','GET'])
-def getRmbg():
-    if 'file' not in request.files: #statement jika file tidak ditemukan
-        flash('No file part')
-        return redirect(request.url)
-
-    file = request.files['file']
-    if file and allowed_file(file.filename): #statement jika file berhasil di upload
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        
-        #tambahkan disini
-        input_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        output_path = os.path.join(app.config['UPLOAD_FOLDER'], 'hasil.png')
-        os.system("rembg -o "+output_path+" "+input_path)
-        
-        flash(filename)
-        return render_template('index.html', filename=output_path)
-
-    else: #statement else jika extensi file tidak sesuai dengan syarat
-        flash('hanya bisa upload file png,jpg,jpeg,dan gif')
-        return redirect(request.url)
+@app.route('/rembg/<imageid>', methods=['POST','GET'])
+def getRmbg(imageid):
+    newfile = os.path.join(app.config['UPLOAD_FOLDER'], imageid+"clothes.png")
+    output_path = os.path.join(app.config['UPLOAD_FOLDER'], imageid+"rembg.png")
+    os.system("rembg -o "+output_path+" "+newfile)
+    return redirect("/"+output_path, code=307)
 #################################################################
 #routing /getcloth dengan menggunakan metode post dan get (potongbaju)
-@app.route('/getcloth', methods=['POST','GET'])
-def getCloth():
-    if 'file' not in request.files: #statement jika file tidak ditemukan
-        flash('No file part')
-        return redirect(request.url)
+config = ConfigProto()
+config.gpu_options.allow_growth = True
+session = InteractiveSession(config=config)
+saved = load_model("save_ckp_frozen.h5")
+@app.route('/getcloth/<imageid>', methods=['POST','GET'])
+def getCloth(imageid):
+    outimage = os.path.join(app.config['UPLOAD_FOLDER'], imageid+"clothes.png")
+    inimage = os.path.join(app.config['UPLOAD_FOLDER'], imageid)
+    api    = fashion_tools(inimage,saved)
+    image_ = api.get_dress()
+    cv2.imwrite(outimage+"notransparent.png",image_)
+    imageOriginal = Image.open(inimage)
+    image = Image.open(outimage+"notransparent.png").resize((imageOriginal.height, imageOriginal.height))
+    ratio = imageOriginal.width/imageOriginal.height
+    Xpad = (image.width-ratio*image.height)/2
+    Ypad = 0
+    im1 = image.crop((Xpad, 0, image.width-Xpad, imageOriginal.height))
+    im1.save(outimage, "png")
+    image = Image.open(outimage)
+    new_image = Image.new("RGBA", image.size, "WHITE") # Create a white rgba background
+    new_image.paste(image, (0, 0), image)              # Paste the image on the background. Go to the links given below for details.
+    new_image.convert('RGB').save(outimage, "JPEG")  # Save as JPEG
+    return redirect("/"+outimage, code=307)
 
-    file = request.files['file']
-    if file and allowed_file(file.filename): #statement jika file berhasil di upload
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        
-        #tambahkan disini
-        config = ConfigProto()
-        config.gpu_options.allow_growth = True
-        session = InteractiveSession(config=config)
-
-        f = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-
-        saved = load_model("save_ckp_frozen.h5")
-
-        ###running code
-        api    = fashion_tools(f,saved)
-        image_ = api.get_dress()
-        cv2.imwrite("out1.png",image_)
-        
-        flash(filename)
-        return render_template('index.html', filename=os.path.join(app.config['UPLOAD_FOLDER'], "out1.png"))
-
-    else: #statement else jika extensi file tidak sesuai dengan syarat
-        flash('hanya bisa upload file png,jpg,jpeg,dan gif')
-        return redirect(request.url)
- 
 #################################################################
 #routing /normalmap dengan menggunakan metode post dan get (normalmap)
-@app.route('/normalmap', methods=['POST','GET'])
-def NormalMap():
-    if 'file' not in request.files: #statement jika file tidak ditemukan
-        flash('No file part')
-        return redirect(request.url)
-
-    file = request.files['file']
-    if file and allowed_file(file.filename): #statement jika file berhasil di upload
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        
-        outimage = os.path.join(app.config['UPLOAD_FOLDER'], "out3.png")
-        
-        os.system('python deepbump_cli.py -i '+(os.path.join(app.config['UPLOAD_FOLDER'], filename))+' -n '+outimage+' -o medium')
-        
-        flash(filename)
-        return render_template('index.html', filename=outimage)
-
-    else: #statement else jika extensi file tidak sesuai dengan syarat
-        flash('hanya bisa upload file png,jpg,jpeg,dan gif')
-        return redirect(request.url)
+@app.route('/normalmap/<imageid>', methods=['POST','GET'])
+def NormalMap(imageid):
+    outimage = os.path.join(app.config['UPLOAD_FOLDER'], imageid+"normals.png")
+    inimage = os.path.join(app.config['UPLOAD_FOLDER'], imageid+"rembg.png")
+    oscommand = 'python deepbump_cli.py -i '+inimage+' -n '+outimage+' -o big'
+    os.system(oscommand)
+    return redirect("/"+outimage, code=307)
 
 @app.route('/<filename>') #routing untuk display name
 def display_img(filename): 
