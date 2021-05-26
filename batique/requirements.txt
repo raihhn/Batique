@@ -1,0 +1,8 @@
+Flask==1.1.2
+Werkzeug==1.0.1
+onnxruntime==1.7.0
+opencv_python==4.5.1.48
+tensorflow==2.4.0
+numpy==1.19.1
+Pillow==8.2.0
+rembg==1.0.11
