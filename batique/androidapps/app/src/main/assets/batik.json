@@ -1,0 +1,293 @@
+{
+  "batik": [
+    {
+      "id": "b1",
+      "name": "Batik Garutan - Garut",
+      "origin": [
+        "o6"
+      ],
+      "imagePath": "img/Batik Garutan - Garut.jpg"
+    },
+    {
+      "id": "b2",
+      "name": "Batik Mangga Gedong Gincu - Majalengka",
+      "origin": [
+        "o9"
+      ],
+      "imagePath": "img/Batik Mangga Gedong Gincu - Majalengka.jpg"
+    },
+    {
+      "id": "b3",
+      "name": "Batik Motif Pohon Hayat - Lampung",
+      "origin": [
+        "o8"
+      ],
+      "imagePath": "img/Batik Motif Pohon Hayat - Lampung.jpg"
+    },
+    {
+      "id": "b4",
+      "name": "Batik Parang Kusumo - Solo",
+      "origin": [
+        "o12"
+      ],
+      "imagePath": "img/Batik Parang Kusumo - Solo.jpg"
+    },
+    {
+      "id": "b5",
+      "name": "Batik Parang Seling Warna - Solo",
+      "origin": [
+        "o12"
+      ],
+      "imagePath": "img/Batik Parang Seling Warna - Solo.jpg"
+    },
+    {
+      "id": "b6",
+      "name": "Batik Pintu Aceh - Aceh",
+      "origin": [
+        "o1"
+      ],
+      "imagePath": "img/Batik Pintu Aceh - Aceh.jpg"
+    },
+    {
+      "id": "b7",
+      "name": "Batik Pring Sedapur - Magetan",
+      "origin": [
+        "o10"
+      ],
+      "imagePath": "img/Batik Pring Sedapur - Magetan.jpg"
+    },
+    {
+      "id": "b8",
+      "name": "Batik Sekar Jagad - Yogyakarta dan Solo",
+      "origin": [
+        "o14",
+        "o12"
+      ],
+      "imagePath": "img/Batik Sekar Jagad - Yogyakarta dan Solo.jpg"
+    },
+    {
+      "id": "b9",
+      "name": "Batik Sidoluhur - Solo",
+      "origin": [
+        "o12"
+      ],
+      "imagePath": "img/Batik Sidoluhur - Solo.jpg"
+    },
+    {
+      "id": "b10",
+      "name": "Motif Batik Ceplokan - Yogyakarta",
+      "origin": [
+        "o14"
+      ],
+      "imagePath": "img/Motif Batik Ceplokan - Yogyakarta.jpg"
+    },
+    {
+      "id": "b11",
+      "name": "Motif Batik Ganggeng - Indramayu",
+      "origin": [
+        "o7"
+      ],
+      "imagePath": "img/Motif Batik Ganggeng - Indramayu.jpg"
+    },
+    {
+      "id": "b12",
+      "name": "Motif Batik Gedong Gincu - Majalengka",
+      "origin": [
+        "o9"
+      ],
+      "imagePath": "img/Motif Batik Gedong Gincu - Majalengka.jpg"
+    },
+    {
+      "id": "b13",
+      "name": "Motif Batik Gurda - Yogyakarta",
+      "origin": [
+        "o14"
+      ],
+      "imagePath": "img/Motif Batik Gurda - Yogyakarta.jpg"
+    },
+    {
+      "id": "b14",
+      "name": "Motif Batik Hayam Pelung - Cianjur",
+      "origin": [
+        "o3"
+      ],
+      "imagePath": "img/Motif Batik Hayam Pelung - Cianjur.jpg"
+    },
+    {
+      "id": "b15",
+      "name": "Motif Batik Kawungan - Tasikmalaya",
+      "origin": [
+        "o13"
+      ],
+      "imagePath": "img/Motif Batik Kawungan - Tasikmalaya.jpg"
+    },
+    {
+      "id": "b16",
+      "name": "Motif Batik Keraton - Yogyakarta",
+      "origin": [
+        "o14"
+      ],
+      "imagePath": "img/Motif Batik Keraton - Yogyakarta.jpg"
+    },
+    {
+      "id": "b17",
+      "name": "Motif Batik Kota Angin - Majalengka",
+      "origin": [
+        "o9"
+      ],
+      "imagePath": "img/Motif Batik Kota Angin - Majalengka.jpg"
+    },
+    {
+      "id": "b18",
+      "name": "Motif Batik Laut Ngibing - Majalengka",
+      "origin": [
+        "o9"
+      ],
+      "imagePath": "img/Motif Batik Laut Ngibing - Majalengka.jpg"
+    },
+    {
+      "id": "b19",
+      "name": "Motif Batik Maenpo - Cianjur",
+      "origin": [
+        "o3"
+      ],
+      "imagePath": "img/Motif Batik Maenpo - Cianjur.jpg"
+    },
+    {
+      "id": "b20",
+      "name": "Motif Batik Mega Mendung - Cirebon",
+      "origin": [
+        "o5"
+      ],
+      "imagePath": "img/Motif Batik Mega Mendung - Cirebon.jpg"
+    },
+    {
+      "id": "b21",
+      "name": "Motif Batik Merak Ngibing - Garut",
+      "origin": [
+        "o6"
+      ],
+      "imagePath": "img/Motif Batik Merak Ngibing - Garut.jpg"
+    },
+    {
+      "id": "b22",
+      "name": "Motif Batik Meru – Yogyakarta",
+      "origin": [
+        "o14"
+      ],
+      "imagePath": "img/Motif Batik Meru – Yogyakarta.jpg"
+    },
+    {
+      "id": "b23",
+      "name": "Motif Batik Nyi Rambut Kasih - Majalengka",
+      "origin": [
+        "o9"
+      ],
+      "imagePath": "img/Motif Batik Nyi Rambut Kasih - Majalengka.jpg"
+    },
+    {
+      "id": "b24",
+      "name": "Motif Batik Priyangan - Tasikmalaya",
+      "origin": [
+        "o13"
+      ],
+      "imagePath": "img/Motif Batik Priyangan - Tasikmalaya.jpg"
+    },
+    {
+      "id": "b25",
+      "name": "Motif Batik Sawoan - Tasikmalaya",
+      "origin": [
+        "o13"
+      ],
+      "imagePath": "img/Motif Batik Sawoan - Tasikmalaya.jpg"
+    },
+    {
+      "id": "b26",
+      "name": "Motif Batik Semen Rante - Solo",
+      "origin": [
+        "o12"
+      ],
+      "imagePath": "img/Motif Batik Semen Rante - Solo.jpg"
+    },
+    {
+      "id": "b27",
+      "name": "Motif Batik Sido Mukti - Solo",
+      "origin": [
+        "o12"
+      ],
+      "imagePath": "img/Motif Batik Sido Mukti - Surakarta.jpg"
+    },
+    {
+      "id": "b28",
+      "name": "Motif Batik Sidoluhur - Yogyakarta",
+      "origin": [
+        "o14"
+      ],
+      "imagePath": "img/Motif Batik Sidoluhur - Yogyakarta.jpg"
+    },
+    {
+      "id": "b29",
+      "name": "Motif Batik Simbar Kencana - Majalengka",
+      "origin": [
+        "o9"
+      ],
+      "imagePath": "img/Motif Batik Simbar Kencana - Majalengka.jpg"
+    },
+    {
+      "id": "b30",
+      "name": "Motif Batik Simbut - Banten",
+      "origin": [
+        "o2"
+      ],
+      "imagePath": "img/Motif Batik Simbut - Banten.jpg"
+    },
+    {
+      "id": "b31",
+      "name": "Motif Batik Sogan - Solo",
+      "origin": [
+        "o12"
+      ],
+      "imagePath": "img/Motif Batik Sogan - Solo.jpg"
+    },
+    {
+      "id": "b32",
+      "name": "Motif Batik Sulur Kembang Angrek - Ciamis",
+      "origin": [
+        "o4"
+      ],
+      "imagePath": "img/Motif Batik Sulur Kembang Angrek - Ciamis.jpg"
+    },
+    {
+      "id": "b33",
+      "name": "Motif Batik Sulur Kembang Krisan - Ciamis",
+      "origin": [
+        "o4"
+      ],
+      "imagePath": "img/Motif Batik Sulur Kembang Krisan - Ciamis.jpg"
+    },
+    {
+      "id": "b34",
+      "name": "Motif Batik Truntum - Solo",
+      "origin": [
+        "o12"
+      ],
+      "imagePath": "img/Motif Batik Truntum - Solo.jpg"
+    },
+    {
+      "id": "b35",
+      "name": "Motif Batik Tujuh Rupa - Pekalongan",
+      "origin": [
+        "o11"
+      ],
+      "imagePath": "img/Motif Batik Tujuh Rupa - Pekalongan.jpeg"
+    },
+    {
+      "id": "b36",
+      "name": "Batik Sidomukti - Solo",
+      "origin": [
+        "o12"
+      ],
+      "imagePath": "img/Batik Sidomukti - Solo.jpg"
+    }
+  ]
+}

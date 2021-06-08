@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">VirtualBatikTryOn</string>
+    <string name="next">Next</string>
+    <string name="process">Process</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="Pattern">Pattern</string>
+    <string name="batik_origin">Batik Origin</string>
+    <string name="Details">Detail</string>
+    <string name="style_type">Style Type</string>
+    <string name="batik_pattern">Batik Pattern</string>
+    <string name="size">Size</string>
+    <string name="size_chest">Chest</string>
+    <string name="size_waist">Waist</string>
+    <string name="size_collar">Collar</string>
+    <string name="size_sleeve">Sleeve</string>
+    <string name="photo">Photo</string>
+    <string name="search_origin">Search Origin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="centimeters">cm</string>
+    <string name="save_image_info">Save Image &amp; info</string>
+</resources>

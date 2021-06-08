@@ -1,0 +1,59 @@
+{
+    "origin": [{
+            "id": "o1",
+            "name": "Aceh"
+        },
+        {
+            "id": "o2",
+            "name": "Banten"
+        },
+        {
+            "id": "o3",
+            "name": "Cianjur"
+        },
+        {
+            "id": "o4",
+            "name": "Ciamis"
+        },
+        {
+            "id": "o5",
+            "name": "Cirebon"
+        },
+        {
+            "id": "o6",
+            "name": "Garut"
+        },
+        {
+            "id": "o7",
+            "name": "Indramayu"
+        },
+        {
+            "id": "o8",
+            "name": "Lampung"
+        },
+        {
+            "id": "o9",
+            "name": "Majalengka"
+        },
+        {
+            "id": "o10",
+            "name": "Magetan"
+        },
+        {
+            "id": "o11",
+            "name": "Pekalongan"
+        },
+        {
+            "id": "o12",
+            "name": "Solo"
+        },
+        {
+            "id": "o13",
+            "name": "Tasikmalaya"
+        },
+        {
+            "id": "o14",
+            "name": "Yogyakarta"
+        }
+    ]
+}

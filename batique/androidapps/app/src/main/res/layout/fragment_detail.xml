@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_fragment"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailFragment">
+
+
+    <TextView
+        android:id="@+id/cm4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/centimeters"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_sleeve"
+        app:layout_constraintStart_toEndOf="@+id/edt_sleeve"
+        app:layout_constraintTop_toTopOf="@+id/edt_sleeve" />
+
+    <TextView
+        android:id="@+id/cm3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/centimeters"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_collar"
+        app:layout_constraintStart_toEndOf="@+id/edt_collar"
+        app:layout_constraintTop_toTopOf="@+id/edt_collar" />
+
+    <TextView
+        android:id="@+id/cm2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/centimeters"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_waist"
+        app:layout_constraintStart_toEndOf="@+id/edt_waist"
+        app:layout_constraintTop_toTopOf="@+id/edt_waist" />
+
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/size"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pattern" />
+
+    <TextView
+        android:id="@+id/style_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/style_type"
+        app:layout_constraintStart_toStartOf="@+id/detail"
+        app:layout_constraintTop_toBottomOf="@+id/detail" />
+
+    <TextView
+        android:id="@+id/tv_style_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        tools:text="@string/style_type"
+        app:layout_constraintStart_toEndOf="@+id/style_type"
+        app:layout_constraintTop_toTopOf="@+id/style_type" />
+
+    <TextView
+        android:id="@+id/pattern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/Pattern"
+        app:layout_constraintEnd_toEndOf="@+id/style_type"
+        app:layout_constraintTop_toBottomOf="@+id/style_type" />
+
+    <TextView
+        android:id="@+id/tv_pattern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/Pattern"
+        app:layout_constraintStart_toStartOf="@+id/tv_style_type"
+        app:layout_constraintTop_toTopOf="@+id/pattern" />
+
+    <EditText
+        android:id="@+id/edt_chest"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:includeFontPadding="true"
+        android:inputType="number"
+        android:padding="5dp"
+        app:layout_constraintStart_toEndOf="@+id/chest"
+        app:layout_constraintTop_toBottomOf="@+id/size" />
+
+    <TextView
+        android:id="@+id/chest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/size_chest"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_chest"
+        app:layout_constraintStart_toStartOf="@+id/size"
+        app:layout_constraintTop_toTopOf="@+id/edt_chest" />
+
+    <TextView
+        android:id="@+id/waist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/size_waist"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_waist"
+        app:layout_constraintEnd_toEndOf="@+id/chest"
+        app:layout_constraintTop_toTopOf="@+id/edt_waist" />
+
+    <EditText
+        android:id="@+id/edt_waist"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="5dp"
+        app:layout_constraintStart_toEndOf="@+id/chest"
+        app:layout_constraintTop_toBottomOf="@+id/edt_chest" />
+
+    <TextView
+        android:id="@+id/collar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/size_collar"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_collar"
+        app:layout_constraintEnd_toEndOf="@+id/chest"
+        app:layout_constraintTop_toBottomOf="@+id/edt_waist" />
+
+    <EditText
+        android:id="@+id/edt_collar"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="5dp"
+        app:layout_constraintStart_toEndOf="@+id/chest"
+        app:layout_constraintTop_toBottomOf="@+id/edt_waist" />
+
+    <TextView
+        android:id="@+id/sleeve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/size_sleeve"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_sleeve"
+        app:layout_constraintEnd_toEndOf="@+id/chest"
+        app:layout_constraintTop_toTopOf="@+id/edt_sleeve" />
+
+    <EditText
+        android:id="@+id/edt_sleeve"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="5dp"
+        app:layout_constraintStart_toEndOf="@+id/chest"
+        app:layout_constraintTop_toBottomOf="@+id/edt_collar" />
+
+    <TextView
+        android:id="@+id/cm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/centimeters"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_chest"
+        app:layout_constraintStart_toEndOf="@+id/edt_chest"
+        app:layout_constraintTop_toTopOf="@+id/edt_chest" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:text="@string/save_image_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
