@@ -110,9 +110,9 @@ class PatternFragment : Fragment() {
                     override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
                     override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
                         if (bitmap != null) {
-                            imageData = bitmap.copy(Bitmap.Config.ARGB_8888, true)//image yang difoto
-                            clothesImage = bitmap.copy(Bitmap.Config.ARGB_8888, true)
-                            normalMapImage = bitmap.copy(Bitmap.Config.ARGB_8888, true)
+                            //imageData = bitmap.copy(Bitmap.Config.ARGB_8888, true)//image yang difoto
+                            //clothesImage = bitmap.copy(Bitmap.Config.ARGB_8888, true)
+                            //normalMapImage = bitmap.copy(Bitmap.Config.ARGB_8888, true)
                             batikImage = bitmap
                             uploadImage(bitmapToFile(imageData,"$imagePath"),imageData)
                         }
@@ -165,8 +165,8 @@ class PatternFragment : Fragment() {
                             }
                         }
                         //Log.d(TAG, "onItemSelected batik origin: $batikOrigin")
-                            batikList.addAll(batikOrigin)
-                            showRecyclerView()
+                        batikList.addAll(batikOrigin)
+                        showRecyclerView()
                     }
 
                 })
@@ -221,18 +221,11 @@ class PatternFragment : Fragment() {
             file // it will return null
         }
     }
-    private fun Bitmap.getBatikMasking(clothes:Bitmap, normal:Bitmap, batik:Bitmap, backgroundColor:Int = Color.WHITE):Bitmap?{
-        Log.d(TAG, "real photo start")
+    private fun Bitmap.getBatikMasking(clothes:Bitmap, normal:Bitmap, batik:Bitmap):Bitmap?{
         val bitmap = copy(config,true)
-        Log.d(TAG, "real photo $width $height")
-        Log.d(TAG,"cloth photo "+clothes.width+" "+clothes.height)
-        Log.d(TAG,"normals map photo"+normal.width+" "+normal.height)
         var alpha:Int
         var pixel:Int
         val newBatik = batik.resizeByWidth(width)
-        Log.d(TAG,""+newBatik.width+" "+newBatik.height)
-        Log.d(TAG,"batik painting start")
-        // scan through all pixels
         for (x in 0 until width){
             for (y in 0 until height){
                 pixel = clothes.getPixel(x,y)
@@ -242,13 +235,15 @@ class PatternFragment : Fragment() {
                     Color.colorToHSV(normal.getPixel(x,y), normalHsv)
                     val kecerahanbatik = ((normalHsv[0]-120)/255)*normalHsv[2]
                     val batikHsv = FloatArray(3)
-                    Color.colorToHSV(newBatik.getPixel(if(x<newBatik.width) x else (x%newBatik.width),if(y<newBatik.height) y else (y%newBatik.height)), batikHsv)
+                    Color.colorToHSV(newBatik.getPixel(
+                        if(x<newBatik.width) x else (x%newBatik.width),
+                        if(y<newBatik.height) y else (y%newBatik.height)
+                    ), batikHsv)
                     batikHsv[2] = kecerahanbatik
                     bitmap.setPixel(x,y, Color.HSVToColor(batikHsv))
                 }
             }
         }
-        Log.d(TAG,"image changed")
         return bitmap
     }
     private fun Bitmap.resizeByWidth(width:Int):Bitmap{

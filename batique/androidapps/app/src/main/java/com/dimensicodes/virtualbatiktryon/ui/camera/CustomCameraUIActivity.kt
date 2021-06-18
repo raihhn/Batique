@@ -49,7 +49,6 @@ class CustomCameraUIActivity : AppCompatActivity() {
             else initCamera2Api()
 
         }
-
     }
     fun makeArray() : List<Int>{
         val newlist = mutableListOf<Int>()
@@ -101,13 +100,8 @@ class CustomCameraUIActivity : AppCompatActivity() {
             it.alpha = 1f
             iv_camera_flash_on.alpha = 0.4f
             iv_camera_flash_auto.alpha = 0.4f
-
         }
-
     }
-
-
-
     override fun onPause() {
         //  cameraPreview.pauseCamera()
         camera2.close()
